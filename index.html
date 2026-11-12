@@ -653,21 +653,23 @@
 
     
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+       
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyAiBWOR--ekX9H5NIqHDGL2tjYD2VrwT9g",
-            authDomain: "minku.firebaseapp.com",
-            databaseURL: "https://minku-default-rtdb.firebaseio.com",
-            projectId: "minku",
-            storageBucket: "minku.firebasestorage.app",
-            messagingSenderId: "774585453955",
-            appId: "1:774585453955:web:d44f6a3d5e254b15153ab6"
-        };
+const firebaseConfig = {
+  apiKey: "AIzaSyCEvfc9m_lw8D5WF7UZkgBX1c57serdJTU",
+  authDomain: "minku-1f027.firebaseapp.com",
+  projectId: "minku-1f027",
+  storageBucket: "minku-1f027.firebasestorage.app",
+  messagingSenderId: "428681781349",
+  appId: "1:428681781349:web:66cf6a5db90c939ecce68c",
+  measurementId: "G-H68S084HQZ"
+};
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
         const viewCountRef = ref(db, 'stats/global_views');
         runTransaction(viewCountRef, (currentViews) => {
