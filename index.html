@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Minku</title>
+<meta name="description" content="Explore the official Minku gallery featuring a collection of over 50 exclusive photos and updates. Discover and view high-quality images easily.">
+<meta name="keywords" content="Minku, Minku House, photo gallery, Chathura Nimesh, Minku photos, Cat, Cat Photos, Animal, ">
+<meta name="author" content="Chathura Nimesh">
+<meta name="robots" content="index, follow">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .header-glass {
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff7200;
+        }
+
+        .shot-card {
+            background: #111827;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #374151;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+       
+        
+
+         .shot-card img {
+            width: 100%;
+            height: 380px; 
+            object-fit: contain; 
+            background-color: #0b0f19; 
+            padding: 10px;
+        }
+
+        .badge-number {
+            background: #ff7200;
+            color: #fff;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .guide-box {
+            background: #1f2937;
+            border-left: 4px solid #ff7200;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        #google_translate_element select {
+            background-color: #1f2937;
+            color: #fff;
+            border: 1px solid #ff7200;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            outline: none;
+        }
+        .goog-te-banner-frame, .goog-te-balloon-frame { display: none !important; }
+        body { top: 0px !important; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+   
+    <header class="header-glass sticky top-0 z-50 py-4 px-8 md:px-16 flex items-center justify-between">
+        <div class="logo">
+            <h2 class="text-[#ff7200] text-3xl font-black font-sans tracking-wide">Minku</h2>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8">
+            <a onclick="switchTab('home')" class="nav-link active" data-tab="home">HOME</a>
+            <a onclick="switchTab('photos')" class="nav-link" data-tab="photos">PHOTOS</a>
+        </nav>
+
+
+
+            <div class="text-xs bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg text-amber-400 font-semibold flex items-center gap-1.5">
+                <i class="fas fa-eye"></i> Views: <span id="globalViewCount" class="text-white font-bold"></span>
+            </div>
+
+            <div id="google_translate_element"></div>
+        </div>
+    </header>
+
+  
+    <main class="p-6 md:p-12 max-w-6xl mx-auto w-full flex-1">
+        
+       
+        <section id="home" class="tab-content active">
+            <div class="py-16 md:py-24 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="max-w-xl">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                        Welcome to & <br><span class="text-[#ff7200]">MINKU HOUSE</span> <br>Portal
+                    </h1>
+                    
+                    <button onclick="switchTab('photos')" class="bg-[#ff7200] hover:bg-white hover:text-[#ff7200] text-white font-bold text-lg px-8 py-3 rounded-xl transition duration-300 shadow-lg">
+                        EXPLORE PHOTOS
+                    </button>
+                </div>
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 max-w-md w-full">
+                    <h3 class="text-xl font-bold text-[#ff7200] mb-4">Quick Navigation</h3>
+                    <ul class="space-y-3 text-slate-300 font-medium">
+                        <li onclick="switchTab('photos')" class="cursor-pointer hover:text-[#ff7200] flex items-center gap-3"><i class="fas fa-chevron-right text-xs text-[#ff7200]"></i> Minku House (50+ Photos)</li>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="photos" class="tab-content">
+            
+
+            <article id="shot-1" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">01</div>
+                    
+                </div>
+                <img src="images/image1.jpg" alt="">
+                 
+            </article>
+
+            <article id="shot-2" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">02</div>
+                    
+                </div>
+                <img src="images/image2.jpg" alt="">
+
+           
+            </article>
+
+            <article id="shot-3" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">03</div>
+                    
+                </div>
+                <img src="images/image3.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-4" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">04</div>
+                    
+                </div>
+                <img src="images/image4.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-5" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">05</div>
+                    
+                </div>
+                <img src="images/image5.jpg" alt="">
+              
+            </article>
+
+            <article id="shot-6" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">06</div>
+                    
+                </div>
+                <img src="images/image6.jpg" alt="">
+                 
+            </article>
+
+            <article id="shot-7" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">07</div>
+                    
+                </div>
+                <img src="images/image7.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-8" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">08</div>
+                    
+                </div>
+                <img src="images/image8.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-9" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">09</div>
+                    
+                </div>
+                <img src="images/image9.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-10" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">10</div>
+                    
+                </div>
+                <img src="images/image10.jpg" alt="Hook Shot">
+                
+            </article>
+
+            <article id="shot-11" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">11</div>
+                    
+                </div>
+                <img src="images/image11.jpg" alt="">
+               
+            </article>
+
+            <article id="shot-12" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">12</div>
+                    
+                </div>
+                <img src="images/image12.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-13" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">13</div>
+                    
+                </div>
+                <img src="images/image13.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-14" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">14</div>
+                    
+                </div>
+                <img src="images/image14.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-15" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">15</div>
+                    
+                </div>
+                <img src="images/image15.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-16" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">16</div>
+                    
+                </div>
+                <img src="images/image16.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-17" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">17</div>
+                    
+                </div>
+                <img src="images/image17.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-18" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">18</div>
+                    
+                </div>
+                <img src="images/image18.jpg" alt="">
+                 
+            </article>
+
+            <article id="shot-19" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">19</div>
+                    
+                </div>
+                <img src="images/image19.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-20" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">20</div>
+                    
+                </div>
+                <img src="images/image20.jpg" alt="">
+               
+            </article>
+
+            <article id="shot-21" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">21</div>
+                   
+                </div>
+                <img src="images/image21.jpg" alt="">
+            </article>
+
+            <article id="shot-22" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">22</div>
+                    
+                </div>
+                <img src="images/image22.jpg" alt="">
+                 
+            </article>
+
+            <article id="shot-23" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">23</div>
+                    
+                </div>
+                <img src="images/image23.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-24" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">24</div>
+                    
+                </div>
+                <img src="images/image24.jpg" alt="">
+
+            </article>
+
+            <article id="shot-25" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">25</div>
+                    
+                </div>
+                <img src="images/image25.jpg" alt="">
+                
+            </article>
+
+            <article id="shot-26" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">26</div>
+                    
+                </div>
+                <img src="images/image26.jpg" alt="">
+
+            </article>
+
+            <article id="shot-27" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">27</div>
+                    
+                </div>
+                <img src="images/image27.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-28" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">28</div>
+                    
+                </div>
+                <img src="images/image28.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-29" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">29</div>
+                    
+                </div>
+                <img src="images/image29.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-30" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">30</div>
+                    
+                </div>
+                <img src="images/image30.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-31" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">31</div>
+                    
+                </div>
+                <img src="images/image31.jpg" alt="">
+                
+            </article>
+
+               <article id="shot-32" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">32</div>
+                    
+                </div>
+                <img src="images/image32.jpg" alt="">
+                
+            </article>
+
+               <article id="shot-33" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">33</div>
+                    
+                </div>
+                <img src="images/image33.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-34" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">34</div>
+                    
+                </div>
+                <img src="images/image34.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-35" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">35</div>
+                    
+                </div>
+                <img src="images/image35.jpg" alt="">
+                
+            </article>
+
+               <article id="shot-36" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">36</div>
+                    
+                </div>
+                <img src="images/image36.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-37" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">37</div>
+                    
+                </div>
+                <img src="images/image37.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-38" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">38</div>
+                    
+                </div>
+                <img src="images/image38.jpg" alt="">
+                
+            </article>
+
+               <article id="shot-39" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">39</div>
+                    
+                </div>
+                <img src="images/image39.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-40" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">40</div>
+                    
+                </div>
+                <img src="images/image40.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-41" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">41</div>
+                    
+                </div>
+                <img src="images/image41.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-42" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">42</div>
+                    
+                </div>
+                <img src="images/image42.jpg" alt="">
+                
+            </article>
+
+               <article id="shot-43" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">43</div>
+                    
+                </div>
+                <img src="images/image43.jpg" alt="">
+                
+            </article>
+
+
+               <article id="shot-44" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">44</div>
+                    
+                </div>
+                <img src="images/image44.jpg" alt="">
+                
+            </article>
+
+
+            <article id="shot-45" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">45</div>
+                    
+                </div>
+                <img src="images/image45.jpeg" alt="">
+                
+            </article>
+
+
+            <article id="shot-46" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">46</div>
+                    
+                </div>
+                <img src="images/image46.jpeg" alt="">
+                
+            </article>
+
+            <article id="47" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">47</div>
+                    
+                </div>
+                <img src="images/image47.jpeg" alt="">
+                
+            </article>
+
+
+            <article id="shot-48" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">48</div>
+                    
+                </div>
+                <img src="images/image48.jpeg" alt="">
+                
+            </article>
+
+
+            <article id="shot-49" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">49</div>
+                    
+                </div>
+                <img src="images/image49.jpeg" alt="">
+                
+            </article>
+
+            <article id="shot-50" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">50</div>
+                    
+                </div>
+                <img src="images/image50.jpeg" alt="">
+                
+            </article>
+
+            <article id="shot-51" class="shot-card p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="badge-number">51</div>
+                    
+                </div>
+                <img src="images/image51.jpeg" alt="">
+                
+            </article>
+
+
+        </section>
+
+       
+
+           
+               
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-white py-8 px-6 text-center border-t border-slate-800">
+        <span class="text-2xl font-black italic text-[#ff7200]">MINKU</span>
+        <p class="text-slate-500 text-xs mt-2 uppercase tracking-[0.2em]">&copy; 2026  Design & Development By Chathura Nimesh</p>
+    </footer>
+
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- FIREBASE GLOBAL VIEWS COUNTER -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAiBWOR--ekX9H5NIqHDGL2tjYD2VrwT9g",
+            authDomain: "minku.firebaseapp.com",
+            databaseURL: "https://minku-default-rtdb.firebaseio.com",
+            projectId: "sri-lankan-cricket-pro",
+            storageBucket: "minku.firebasestorage.app",
+            messagingSenderId: "774585453955",
+            appId: "1:774585453955:web:d44f6a3d5e254b15153ab6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const viewCountRef = ref(db, 'stats/global_views');
+        runTransaction(viewCountRef, (currentViews) => {
+            return (currentViews || 0) + 1;
+        }).then((result) => {
+            if (result.committed) {
+                document.getElementById('globalViewCount').textContent = result.snapshot.val();
+            }
+        }).catch((error) => {
+            console.error("Error updating global views: ", error);
+            document.getElementById('globalViewCount').textContent = "1,000+";
+        });
+    </script>
+
+
+
+<script>
+    
+    function switchTab(tabId) {
+        
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        
+        const targetTab = document.getElementById(tabId);
+        if (targetTab) {
+            targetTab.classList.add('active');
+        }
+
+        
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('data-tab') === tabId) {
+                link.classList.add('active');
+            }
+        });
+
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+ 
+   
+</body>
+</html>
